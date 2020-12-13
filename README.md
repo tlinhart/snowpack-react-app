@@ -46,8 +46,8 @@ Remove  HMR from the `src/index.jsx`:
 ```
 
 Available scripts:
-`yarn start` - Run the app in the development mode on http://localhost:8080.
-`yarn build` - Build a static copy of the app to the `build/` folder.
-`yarn test` - Launch the application test runner.
-`yarn format` - Format the code in-place using Prettier.
-`yarn lint` - Check the code if it conforms to the Prettier code style.
+- `yarn start` - Run the app in the development mode on http://localhost:8080.
+- `yarn build` - Build a static copy of the app to the `build/` folder.
+- `yarn test` - Launch the application test runner.
+- `yarn format` - Format the code in-place using Prettier.
+- `yarn lint` - Check the code if it conforms to the Prettier code style.
