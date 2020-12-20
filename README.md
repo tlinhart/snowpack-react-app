@@ -13,36 +13,20 @@ See https://github.com/snowpackjs/snowpack/tree/main/create-snowpack-app for all
 cd snowpack-react-app
 ```
 
-Disable HMR + Fast Refresh otherwise we get this error:
-```
-Unhandled Runtime Error
-Uncaught ReferenceError: $RefreshSig$ is not defined
-```
-
-Uninstall the Fast Refresh plugin:
+Add [serve](https://www.npmjs.com/package/serve):
 ```bash
-yarn remove @snowpack/plugin-react-refresh
+yarn add serve --dev
 ```
 
-Remove it from the `snowpack.config.js`:
+Add script for serving `build/` folder to `package.json`:
 ```diff
-  module.exports = {
+  {
+    "scripts": {
+      ...
++     "serve": "serve build"
+    },
     ...
--   plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-dotenv'],
-+   plugins: ['@snowpack/plugin-dotenv'],
-    ...
-  };
-```
-
-Remove  HMR from the `src/index.jsx`:
-```diff
-  // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-  // Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
-+ /*
-  if (import.meta.hot) {
-    import.meta.hot.accept();
   }
-+ */
 ```
 
 Available scripts:
@@ -51,3 +35,4 @@ Available scripts:
 - `yarn test` - Launch the application test runner.
 - `yarn format` - Format the code in-place using Prettier.
 - `yarn lint` - Check the code if it conforms to the Prettier code style.
+- `yarn serve` - Run the app from the `build/` folder.
